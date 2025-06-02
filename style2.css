@@ -1,0 +1,113 @@
+html {
+    height: 100%;
+}
+body {
+  background-image: linear-gradient(#1EFF00, #09620f);
+}
+a {
+  text-decoration: none;
+}
+.container-eg-btn-3 {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto 10px;
+  padding: .5em;
+  line-height: normal;
+}
+.container-eg-btn-3 .button {
+  color: #fff;
+  margin: 20px;
+  padding: 12px 15px;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  transition: .3s;
+  z-index: 1;
+  background: #2ef628;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.container-eg-btn-3 .button-8:before {
+  content: '';
+  background: linear-gradient(45deg, #00ffb3, #00ff59, #00ff33, #80ff0000, #00ffb3);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 6px;
+}
+.container-eg-btn-3 .button-8:hover:before, .container-eg-btn-3 .button-8:hover:after {
+  opacity: 1;
+}
+.container-eg-btn-3 .button-8:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 6px;
+  opacity: 0;
+}
+.container-eg-btn-3 .button-8:active:after {
+  background: transparent;
+}
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+#lbutton1 {
+  position:absolute;
+  left:0px;
+  bottom:0px;
+}
+#rbutton1 {
+  position:absolute;
+  right:0px;
+  bottom:0px
+}
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+.ptext {
+  opacity: 0;
+  animation: fadeIn 2s forwards; /* forwards (animation-fill-mode) retains the style from the last keyframe when the animation ends */
+}
+.typewritertext {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .10em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #73ff00; }
+}
